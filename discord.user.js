@@ -2,7 +2,8 @@
 // @name Discord Panel
 // @description Discord webpanel mod for Vivaldi browser.
 // @author luetage, lonmcgregor
-// @namespace luetage.vivaldi.net
+// @namespace luetage@vivaldi.net
+// @homepageURL https://luetage.github.io
 // @match https://discordapp.com/channels/*
 // @version 1.6
 // ==/UserScript==
@@ -35,7 +36,7 @@ function makeStyle(){
 }
 [class*="expandable-"] {
 	display: none;
-} 
+}
 .search, .search-bar {
 	width: 77px !important;
 }

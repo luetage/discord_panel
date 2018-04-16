@@ -2,8 +2,7 @@
 // @name Discord Panel
 // @description Discord webpanel mod for Vivaldi browser.
 // @author luetage, lonmcgregor
-// @namespace luetage@vivaldi.net
-// @homepageURL https://luetage.github.io
+// @homepageURL https://github.com/luetage/discord_panel
 // @match https://discordapp.com/channels/*
 // @version 1.6
 // ==/UserScript==

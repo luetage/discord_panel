@@ -18,7 +18,6 @@ let channels = {};
 function makeStyle(){
 	var style = document.createElement('style');
 	style.innerHTML = `
-
 /* Content adjustments */
 [class^="titleWrapper-"]:first-child {
 	padding-left: 30px;

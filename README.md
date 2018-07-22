@@ -5,6 +5,7 @@ A userscript for running Discord in a Vivaldi webpanel.
 ## Features
 
 * Introduces a button on top left to toggle the guilds wrapper, which saves horizontal space.
+* Automatically hides the guilds when you leave the panel with the mouse.
 * Both guilds wrapper and member view overlay.
 * Makes the main chat view more compact and tries to adjust the size of internal popups.
 

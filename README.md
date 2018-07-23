@@ -1,6 +1,7 @@
 # Discord Panel
 
 A userscript for running Discord in a Vivaldi webpanel.
+`Written by luetage and lonmcrgregor`
 
 ## Features
 

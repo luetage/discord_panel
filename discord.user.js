@@ -63,7 +63,7 @@ function makeStyle(){
         fill: #fff;
     }
     [class^="titleText-"] {
-        margin-left: 24px;
+        padding-left: 26px;
     }
     `;
     document.body.appendChild(style);

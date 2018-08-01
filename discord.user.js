@@ -37,9 +37,9 @@ function makeStyle(){
     }
     [class^="membersWrap-"] {
         position: absolute;
-        height: 100%;
+        height: calc(100% - 48px);
         z-index: 98;
-        top: 0;
+        top: 48px
         right: 0;
     }
     [class^="channels-"] > [class^="container-"] {

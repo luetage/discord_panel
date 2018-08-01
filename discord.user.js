@@ -39,7 +39,7 @@ function makeStyle(){
         position: absolute;
         height: calc(100% - 48px);
         z-index: 98;
-        top: 48px
+        top: 48px;
         right: 0;
     }
     [class^="channels-"] > [class^="container-"] {

@@ -4,7 +4,7 @@
 // @author luetage, lonmcgregor
 // @homepageURL https://github.com/luetage/discord_panel
 // @match https://discordapp.com/channels/*
-// @version 1.6
+// @version 2.0
 // ==/UserScript==
 
 "use strict";
@@ -18,84 +18,8 @@ let channels = {};
 function makeStyle(){
     var style = document.createElement('style');
     style.innerHTML = `
-    /* Content adjustments */
-    [class^="titleWrapper-"]:first-child {
-        padding-left: 30px;
-    }
-    .tab-bar:not(.TOP) {
-        margin-left: 30px;
-        overflow-x: scroll;
-    }
-    .tab-bar:not(.TOP)::-webkit-scrollbar {
-        display: none;
-    }
-    [class^="titleWrapper-"].theme-light {
-        background: #fff;
-    }
-    [class*="expandable-"] {
-        display: none;
-    }
-    .search, .search-bar {
-        width: 77px !important;
-    }
-    .popout.popout-bottom-right, .popout.popout-left, .popout.popout-bottom.no-shadow {
-        left: unset !important;
-        transform: unset !important;
-        right: 0;
-    }
-    [class*="sizeMedium-"], [class*="sizeSmall-"], [class^="uploadModal-"], [class*="need-help-modal"], .form-deprecated, .form.deprecated {
-        width: 300px;
-    }
-    [class^="quickswitcher-"] {
-        width: 300px;
-        margin: auto;
-    }
-    #help-query {
-        width: 280px;
-    }
-    .messages-popout-wrap {
-        width: 320px;
-    }
-    /* Chat */
-    .message-group {
-        padding: 8px 0;
-        margin-left: 8px;
-        margin-right: 0px;
-    }
-    .message-group .comment {
-        margin: 0 4px;
-    }
-    .message-group .comment .markup {
-        margin-top: 0px;
-        line-height: 1.2em;
-    }
-    .avatar-large {
-        display: none;
-    }
-    .chat .divider {
-        margin: 8px 12px;
-    }
-    /* Compact chat */
-    .message-group.compact.message-group {
-        padding: 5px 0;
-    }
-    .message-group.compact .message {
-        margin: 0;
-    }
-    .message-group.compact .timestamp {
-        /*width: 48px;
-        text-align: left;*/
-        display: none;
-    }
-    .message-group.compact .message:not(.first) .timestamp, .message-group.compact .message:not(.first) .username-wrapper {
-        display: none;
-    }
-    .message-group.compact .message .message-text .markup {
-        text-indent: unset;
-        padding-left: 0px;
-    }
     /* Overlay Panels */
-    .guilds-wrapper {
+    [class^="guildsWrapper-"] {
         position: absolute;
         height: 100%;
         z-index: 99;
@@ -111,7 +35,7 @@ function makeStyle(){
         left: 70px;
         width: 240px;
     }
-    .channel-members-wrap {
+    [class^="membersWrap-"] {
         position: absolute;
         height: 100%;
         z-index: 98;
@@ -138,6 +62,9 @@ function makeStyle(){
     #sidebartoggle svg {
         fill: #fff;
     }
+    [class^="titleText-"] {
+        margin-left: 24px;
+    }
     `;
     document.body.appendChild(style);
 };
@@ -157,7 +84,7 @@ function toggle() {
         hide();
     }
     else {
-        guilds = document.querySelector('.guilds-wrapper');
+        guilds = document.querySelector('[class^="guildsWrapper-"]');
         channels = document.querySelector('[class^="channels-"]');
         button.classList.add('hide');
         guilds.style.display = 'flex';
@@ -166,7 +93,7 @@ function toggle() {
 };
 
 function hide() {
-    guilds = document.querySelector('.guilds-wrapper');
+    guilds = document.querySelector('[class^="guildsWrapper-"]');
     channels = document.querySelector('[class^="channels-"]');
     button.classList.remove('hide');
     guilds.style.display = 'none';
@@ -175,8 +102,9 @@ function hide() {
 
 setTimeout(function wait() {
     if (document.body.clientWidth < NARROW) {
+        console.log('hi');
         panel = document.getElementById('app-mount');
-        guilds = document.querySelector('.guilds-wrapper');
+        guilds = document.querySelector('[class^="guildsWrapper-"]');
         if (guilds) {
             makeStyle();
             makeButton();

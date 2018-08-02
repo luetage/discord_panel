@@ -84,7 +84,6 @@ function toggle() {
         hide();
     }
     else {
-        guilds = document.querySelector('[class^="guildsWrapper-"]');
         channels = document.querySelector('[class^="channels-"]');
         button.classList.add('hide');
         guilds.style.display = 'flex';
@@ -93,7 +92,6 @@ function toggle() {
 };
 
 function hide() {
-    guilds = document.querySelector('[class^="guildsWrapper-"]');
     channels = document.querySelector('[class^="channels-"]');
     button.classList.remove('hide');
     guilds.style.display = 'none';
@@ -110,7 +108,9 @@ setTimeout(function wait() {
             makeButton();
             if (HIDE_ON_MOUSE_LEAVE) {
                 panel.addEventListener('mouseleave', function() {
-                    if (button.classList.contains('hide')) { hide() }
+                    if (button.classList.contains('hide')) {
+                        hide();
+                    }
                 });
             }
         }

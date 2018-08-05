@@ -100,7 +100,6 @@ function hide() {
 
 setTimeout(function wait() {
     if (document.body.clientWidth < NARROW) {
-        console.log('hi');
         panel = document.getElementById('app-mount');
         guilds = document.querySelector('[class^="guildsWrapper-"]');
         if (guilds) {

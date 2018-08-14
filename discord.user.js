@@ -4,7 +4,7 @@
 // @author luetage, lonmcgregor
 // @homepageURL https://github.com/luetage/discord_panel
 // @match https://discordapp.com/channels/*
-// @version 2.0
+// @version 2.1
 // ==/UserScript==
 
 "use strict";
@@ -19,7 +19,7 @@ function makeStyle(){
     var style = document.createElement('style');
     style.innerHTML = `
     /* Overlay Panels */
-    [class^="guildsWrapper-"] {
+    .guilds-wrapper {
         position: absolute;
         height: 100%;
         z-index: 99;
@@ -101,7 +101,7 @@ function hide() {
 setTimeout(function wait() {
     if (document.body.clientWidth < NARROW) {
         panel = document.getElementById('app-mount');
-        guilds = document.querySelector('[class^="guildsWrapper-"]');
+        guilds = document.querySelector('.guilds-wrapper');
         if (guilds) {
             makeStyle();
             makeButton();

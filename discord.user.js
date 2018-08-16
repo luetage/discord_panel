@@ -19,7 +19,7 @@ function makeStyle(){
     var style = document.createElement('style');
     style.innerHTML = `
     /* Overlay Panels */
-    .guilds-wrapper {
+    [class^="guildsWrapper-"] {
         position: absolute;
         height: 100%;
         z-index: 99;
@@ -101,7 +101,7 @@ function hide() {
 setTimeout(function wait() {
     if (document.body.clientWidth < NARROW) {
         panel = document.getElementById('app-mount');
-        guilds = document.querySelector('.guilds-wrapper');
+        guilds = document.querySelector('[class^="guildsWrapper-"]');
         if (guilds) {
             makeStyle();
             makeButton();

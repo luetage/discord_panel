@@ -4,9 +4,10 @@
 // @author luetage, lonmcgregor
 // @homepageURL https://github.com/luetage/discord_panel
 // @match https://discordapp.com/channels/*
-// @version 2.5
+// @version 2.6
 // ==/UserScript==
 
+(function () {
 "use strict";
 const HIDE_ON_MOUSE_LEAVE = true; //Hides sidebar when mouse leaves panel, set to false to disable.
 const NARROW = 800; //userscript doesn't trigger on load, if discord tab/panel width is equal to or greater than specified value (px).
@@ -118,3 +119,5 @@ setTimeout(function wait() {
         }
     }
 }, 300);
+
+})();

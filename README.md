@@ -1,5 +1,7 @@
 # Discord Panel
 
+Attention: Vivaldi still hasn’t solved numerous webpanel issues, including the whitelisting of cookies and reloading all webpanels when adding or removing a webpanel, or hiding the UI. What this means is we get logged out of Discord whenever we perform any of these actions, and logging back in is a tiresome undertaking, for password managers generally don’t work in webpanels. Therefore this project is archived now, I think it’s less painful using Discord in a tab overall right now.
+
 A userscript for running Discord in a Vivaldi webpanel.
 `Written by luetage and lonmcgregor`
 
